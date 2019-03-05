@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='UTF-8'>
+	<title>Survey</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>	
+	<header>
+		<h1>Survey Page</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href='homePage.html'>Home</a></li>
+			<li><a href='privacyPolicyPage.html'>Privacy Policy</a></li>
+			<li><a href='albumPage.html'>Album Search</a></li>
+		</ul>
+	</nav>
+	<!-- this is the form conataining major, grade, pizza topping -->
+	<div>
+		<form action='actionPage.html' method='POST'>
+			<fieldset>
+				Enter your major:
+				<input type='text' name='major' required><br>
+			</fieldset>
+			
+			<fieldset>
+				<legend>Select Expected Grade</legend>
+				<input type='radio' name='grade' value='A' checked> A<br>
+				<input type='radio' name='grade' value='B'> B<br>
+				<input type='radio' name='grade' value='C'> C<br>
+				<input type='radio' name='grade' value='D'> D<br>
+				<input type='radio' name='grade' value='F'> F<br>
+			</fieldset>
+			
+			<fieldset>
+				Enter your favorite pizza topping:
+				<input type='text' name='favPizzaTopping' required><br>
+			</fieldset>
+			
+			<fieldset>
+				Enter your IP address:
+				<input type='text' name='ipAddress' required><br>
+			</fieldset>
+			
+			<!-- $ip=$_SERVER['REMOTE_ADDR']; -->
+			
+			<br><input type='submit' value='Submit'>
+		</form> 
+	</div>	
+	</body>
+
+</html>
