@@ -1,0 +1,67 @@
+body{
+	background-color:#481568;
+}
+h1{
+	text-align:center;
+	height:5%;
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+	color:yellow;
+}
+h3{
+	color:white;
+	text-decoration:underline;
+}
+
+ul {
+  list-style-type: none;
+  margin-top:24px;
+  padding: 0;
+  width: 150px;
+  background-color:#481568;
+  position: absolute;
+  border:1px solid gray;
+}
+
+li a {
+  display: block;
+  color:#b5b5b1; 
+  padding: 8px 8px;
+  text-decoration: none;
+  
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: yellow;
+  color: black;
+} 
+div {
+	position:absolute;
+	margin-left:175px;
+	width:75%;
+	color:#b5b5b1;
+}
+form{
+	margin-top:16px;
+	color:#b5b5b1;
+}
+fieldset{
+	width:90%;
+	height:50%;
+}
+
+#notification{
+	text-align:center;
+	height:5%;
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+	color:#b5b5b1;
+}
+
+p{
+	line-height:30px;
+	padding-right:5px;
+}
