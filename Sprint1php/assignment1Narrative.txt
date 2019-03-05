@@ -1,0 +1,8 @@
+CNMT 310
+Assignment 1
+
+Commit ID: 03a8155
+
+I’m not the most creative or skilled person with css so I just made a basic web page that would just look appealing 
+to the eye with basic text and a nav bar so you can test easier by just using the nav bar going page to page, the action 
+page can only be accessed through submitting the survey
