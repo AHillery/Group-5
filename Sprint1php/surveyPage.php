@@ -23,7 +23,7 @@ print	"<div>";
 print		"<form action='actionPage.php' method='POST'>";
 print			"<fieldset>";
 print				"Enter your major:";
-print 				"<input type='text' name='major' required><br>";
+print 				"<input type='text' name='major'><br>";
 print			"</fieldset>";
 			
 print			"<fieldset>";
@@ -37,15 +37,12 @@ print			"</fieldset>";
 			
 print			"<fieldset>";
 print				"Enter your favorite pizza topping:";
-print				"<input type='text' name='favPizzaTopping' required><br>";
+print				"<input type='text' name='favPizzaTopping'><br>";
 print			"</fieldset>";
 
-print			"<fieldset>";
-print				"Enter your IP address:";
-print				"<input type='text' name='ipAddress' required><br>";
-print			"</fieldset>";
 
-/* $ip=$_SERVER['REMOTE_ADDR'];*/
+ 
+
 
 print			"<br><input type='submit' value='Submit'>";
 print		"</form>" ;
