@@ -17,7 +17,7 @@ $db = new DB();
 
 print $page->getTopSection();
 
-if (!$db->getConnStatus()) 
+if (!$db->getConnStatus())
 
 {
 
@@ -27,7 +27,7 @@ if (!$db->getConnStatus())
 
 }
 
-if((isset($_POST['major']) && isset($_POST['grade']) && isset($_POST['favPizzaTopping'])))
+if((isset($_POST['major']) && isset($_POST['grade']) && isset($_POST['pizzaTopping'])))
 
 {
 
@@ -37,35 +37,38 @@ if((isset($_POST['major']) && isset($_POST['grade']) && isset($_POST['favPizzaTo
 
 	$grade = $db->dbEsc($_POST['grade']);
 
-	$favPizzaTopping = $db->dbEsc($_POST['favPizzaTopping']);
+	$favPizzaTopping = $db->dbEsc($_POST['pizzaTopping']);
 
-	
 
-	if(($_POST['major'] != "" && $_POST['favPizzaTopping'] != ""))
+
+	if(($_POST['major'] != "" && $_POST['pizzaTopping'] != ""))
 
 	{
 
-	
 
-	$query = 'INSERT INTO survey VALUES (0,now(),"'.$major.'","'.$grade.'","'.$favPizzaTopping.'","'.$ip.'",0)';
+
+	$query = 'INSERT INTO survey VALUES (0,now(),"'.$major.'","'.$grade.'","'.$pizzaTopping.'","'.$ip.'",0)';
 
 	$result = $db->dbCall($query);
 
-	
 
 
 
-	print	"<header>";
+
+	print	"<header class='header'>";
 
 	print		"<h1>Survey Submitted</h1>";
 
 	print	"</header>";
 
-		
+
 
 	print	"<!-- this shows if you submitted the form  -->";
-
-	print	"<p id = 'notification'>Thank you for participating in our survey!!!</p>";
+  print "<div class='wrap'>";
+  print	"<div class='content'>";
+	print	"<p class='text' id='notification'>Thank you for participating in our survey!!!</p>";
+  print "</div>";
+  print "</div>";
 
 	}
 
@@ -81,7 +84,7 @@ if((isset($_POST['major']) && isset($_POST['grade']) && isset($_POST['favPizzaTo
 
 		}
 
-		else if($favPizzaTopping == "")
+		else if($pizzaTopping == "")
 
 		{
 
@@ -102,4 +105,3 @@ else
 }
 
 print $page->getBottomSection();
-
