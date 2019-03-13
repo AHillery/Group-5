@@ -35,8 +35,11 @@ if(isset($_POST['lookup']) && $_POST['lookup']!="")
 	$result = $db->dbCall($query);
 
 	print $page->getTopSection();
+print "<header class='header'>";
+print	  "<h1>Result From Album Search</h1>";
+print  "</header>";
+print	  "<h1>Result From Album Search</h1>";
 
-	print '<h1>Result From Album Database</h1>';
 
 	if(!empty($result))
 
@@ -94,7 +97,7 @@ if(isset($_POST['lookup']) && $_POST['lookup']!="")
 
 		$sanatizedLookup = filter_var($_POST['lookup'], FILTER_SANITIZE_STRING);
 
-		print '<p>No match was found using"'.$sanatizedLookup. '"</p>';
+		print '<p class="text">No match was found using"'.$sanatizedLookup. '"</p>';
 
 	}
 

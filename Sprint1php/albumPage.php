@@ -14,12 +14,14 @@ print  "</header>";
 print	"<nav>";
 print		"<ul>";
 print			"<li><a href='homePage.php'>Home</a></li>";
-print     "<li><a href='albumSearch.html'>Album Search</a></li>";
-print			"<li><a href='surveyPage.php'>Survey</a></li>";
 print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
+print			"<li><a href='surveyPage.php'>Survey</a></li>";
 print		"</ul>";
 print	"</nav>";
 print	"<div class='wrap'>";
+
+
+ 
 print "<div class='content' id='album'>";
 print		"<form action='resultPage.php' method='POST'>";
 print 			"<fieldset class'text'>";
