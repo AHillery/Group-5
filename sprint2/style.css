@@ -305,3 +305,21 @@ fieldset {
 	text-align: left;
 
 }
+
+#dataWithoutNav{
+	padding-top: 5%;
+	margin-left: 10%;
+	width:100%; 
+}
+
+#dataWithNav{
+	padding-top:4%;
+	width:100%; 
+}
+
+#login{
+	float:left;
+	padding-top:1%;
+	
+}
+

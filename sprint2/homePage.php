@@ -13,9 +13,12 @@ print	  "<h1>Home Page</h1>";
 print  "</header>";
 print	"<nav>";
 print		"<ul>";
-print			"<li><a href='surveyPage.php'>Survey</a></li>";
 print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
+print			"<li><a href='surveyPage.php'>Survey</a></li>";
 print			"<li><a href='albumPage.php'>Album Search</a></li>";
+
+print			"<li><a href='surveyDataPage.php'>Survey Data</a></li>";
+
 print		"</ul>";
 print	"</nav>";
 print "<!-- this paragraph gives info on what the page is for -->";

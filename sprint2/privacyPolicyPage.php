@@ -17,6 +17,9 @@ print		"<ul>";
 print			"<li><a href='homePage.php'>Home</a></li>";
 print			"<li><a href='surveyPage.php'>Survey</a></li>";
 print			"<li><a href='albumPage.php'>Album Search</a></li>";
+
+print			"<li><a href='surveyDataPage.php'>Survey Data</a></li>";
+
 print		"</ul>";
 print	"</nav>";
 print  "<!-- this is the private policy page from www.wisconsin.edu/privacy-policy/ -->";

@@ -38,14 +38,14 @@ if(isset($_POST['lookup']) && $_POST['lookup']!="")
 print "<header class='header'>";
 print	  "<h1>Result From Album Search</h1>";
 print  "</header>";
-print	  "<h1>Result From Album Search</h1>";
+
 
 
 	if(!empty($result))
 
 	{
 
-		print '<table style="width:100%; color:black;">';
+		print '<table id="dataWithNav">';
 
 		print'<tr>';
 

@@ -22,6 +22,7 @@ print $page->getTopSection();
 
  
 print	"<header class='header'>";
+print	"<a href = 'www.google.com' id = 'login'>Log in</a>";
 print		"<h1>Survey Page</h1>";
 print	"</header>";
 print	"<nav>";
@@ -29,6 +30,9 @@ print		"<ul>";
 print			"<li><a href='homePage.php'>Home</a></li>";
 print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
 print			"<li><a href='albumPage.php'>Album Search</a></li>";
+
+print			"<li><a href='surveyDataPage.php'>Survey Data</a></li>";
+
 print		"</ul>";
 print	"</nav>";
 print	"<!-- this is the form conataining major, grade, pizza topping -->";
