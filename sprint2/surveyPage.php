@@ -22,7 +22,7 @@ print $page->getTopSection();
 
  
 print	"<header class='header'>";
-print	"<a href = 'www.google.com' id = 'login'>Log in</a>";
+print	 "<a href='login.php'>Login</a>";
 print		"<h1>Survey Page</h1>";
 print	"</header>";
 print	"<nav>";
