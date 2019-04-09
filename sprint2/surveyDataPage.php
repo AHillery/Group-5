@@ -13,7 +13,7 @@ $page->finalizeTopSection();
 
 $page->finalizeBottomSection();
 
-// if($_SESSION['admin'] && isset($_SESSION['admin']{
+if(isset($_SESSION['role']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'admin and user')){
 	$db = new DB();
 
 	if (!$db->getConnStatus()) 
@@ -33,6 +33,7 @@ $page->finalizeBottomSection();
 	print $page->getTopSection();
 	
 print "<header class='header'>";
+print	"<a href = 'logout.php' id = 'logInAndOut'>Log out</a>";
 print	  "<h1>Survey Data</h1>";
 print  "</header>";
 
@@ -101,8 +102,8 @@ print	"</nav>";
 		print '<p class="text">There is no data in the survey table</p>';
 	}
 
-//}
+}
 
-//else{
-//print '<p class="text">ERROR: UNAUTHORIZED ACCESS PAGE WILL NOT BE DISPLAYED </p>';}
+else{
+print '<p class="text">ERROR: UNAUTHORIZED ACCESS PAGE WILL NOT BE DISPLAYED </p>';}
 

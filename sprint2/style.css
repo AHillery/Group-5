@@ -317,7 +317,14 @@ fieldset {
 	width:100%; 
 }
 
-#login{
+#welcomeMessege{
+	float:right;
+	padding-right:3%;
+	color:white;
+	
+}
+
+#logInAndOut{
 	float:left;
 	padding-top:1%;
 	

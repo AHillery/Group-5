@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once("Template.php");
 
 require_once("DB.class.php");

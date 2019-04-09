@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 
 require_once("Template.php");
@@ -22,7 +22,14 @@ print $page->getTopSection();
 
  
 print	"<header class='header'>";
-print	"<a href = 'logout.php' id = 'login'>Log out</a>";
+if(!isset($_SESSION['loggedin']))
+{
+	print	"<a href = 'login.php' id = 'logInAndOut'>Log In</a>";
+}
+else
+{
+	print	"<a href = 'logout.php' id = 'logInAndOut'>Log out</a>";
+}
 print		"<h1>Survey Page</h1>";
 print	"</header>";
 print	"<nav>";
@@ -30,9 +37,9 @@ print		"<ul>";
 print			"<li><a href='homePage.php'>Home</a></li>";
 print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
 print			"<li><a href='albumPage.php'>Album Search</a></li>";
-//if($_SESSION['admin']){}
-print			"<li><a href='surveyDataPage.php'>Survey Data</a></li>";
-
+if(isset($_SESSION['role']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'admin and user')){
+	print			"<li><a href='surveyDataPage.php'>Survey Data</a></li>";
+}
 print		"</ul>";
 print	"</nav>";
 print	"<!-- this is the form conataining major, grade, pizza topping -->";

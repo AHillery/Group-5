@@ -8,7 +8,7 @@ $page->finalizeTopSection();
 $page->finalizeBottomSection();
 
 print $page->getTopSection();
-print  "<form name='myForm' action='homePage.php' method='POST'>";
+print  "<form name='myForm' action='errorPage.php' method='POST'>";
 print  "<fieldset>";
 print  "<label for='username'>Username</label>";
 print  "<input type='text' name='username' value=''><br>";
