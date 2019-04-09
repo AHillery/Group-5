@@ -9,6 +9,7 @@ $page->finalizeBottomSection();
 
 print $page->getTopSection();
 print "<header class='header'>";
+print	  "<a href='login.php'>Login</a>";
 print	  "<h1>Album Search</h1>";
 print  "</header>";
 print	"<nav>";
