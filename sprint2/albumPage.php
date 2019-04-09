@@ -16,7 +16,7 @@ print		"<ul>";
 print			"<li><a href='homePage.php'>Home</a></li>";
 print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
 print			"<li><a href='surveyPage.php'>Survey</a></li>";
-
+//if($_SESSION['admin']){}
 print			"<li><a href='surveyDataPage.php'>Survey Data</a></li>";
 
 print		"</ul>";

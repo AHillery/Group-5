@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once("Template.php");
 
@@ -12,10 +13,7 @@ $page->finalizeTopSection();
 
 $page->finalizeBottomSection();
 
-//if(isset($_POST['lookup']) && $_POST['lookup']!="")
-
-//{
-
+// if($_SESSION['admin'] && isset($_SESSION['admin']{
 	$db = new DB();
 
 	if (!$db->getConnStatus()) 
@@ -105,12 +103,6 @@ print	"</nav>";
 
 //}
 
-/*else{
+//else{
+//print '<p class="text">ERROR: UNAUTHORIZED ACCESS PAGE WILL NOT BE DISPLAYED </p>';}
 
-	print $page->getTopSection();
-
-	print '<h1>ERROR: NOTHING WAS ENTERED</h1>';
-
-	print $page->getBottomSection();
-
-}*/
