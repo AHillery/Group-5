@@ -1,23 +1,23 @@
 <?php
 session_start();
 require_once("Template.php");
-
 $page = new Template("Album Search Page");
 $page->addHeadElement("<link rel='stylesheet' href='style.css'>");
 $page->finalizeTopSection();
 $page->finalizeBottomSection();
-
 print $page->getTopSection();
 print "<header class='header'>";
 if(!isset($_SESSION['loggedin']))
 {
 	print	"<a href = 'login.php' id = 'logInAndOut'>Log In</a>";
+	print	  "<h1>Album Search</h1>";
 }
 else
 {
 	print	"<a href = 'logout.php' id = 'logInAndOut'>Log out</a>";
+	print	  "<h1>Album Search</h1>";
+	print "<p id = 'welcomeMessege'>Welcome ".$_SESSION['name']."</p>";
 }
-print	  "<h1>Album Search</h1>";
 print  "</header>";
 print	"<nav>";
 print		"<ul>";
@@ -30,8 +30,6 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'
 print		"</ul>";
 print	"</nav>";
 print	"<div class='wrap'>";
-
-
  
 print "<div class='content' id='album'>";
 print		"<form action='resultPage.php' method='POST'>";
