@@ -7,7 +7,7 @@ require_once("DB.class.php");
 
 $page = new Template("Survey Data Page");
 
-$page->addHeadElement("<link rel='stylesheet' href='style.css'>");
+$page->addHeadElement("<link rel='stylesheet' href='styles.css'>");
 
 $page->finalizeTopSection();
 
@@ -33,19 +33,27 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'
 	print $page->getTopSection();
 	
 print "<header class='header'>";
-print	"<a href = 'logout.php' id = 'logInAndOut'>Log out</a>";
-print	  "<h1>Survey Data</h1>";
-print  "</header>";
-
 print	"<nav>";
 print		"<ul>";
 print			"<li><a href='homePage.php'>Home</a></li>";
-print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
 print			"<li><a href='surveyPage.php'>Survey</a></li>";
 print			"<li><a href='albumPage.php'>Album Search</a></li>";
-print		"</ul>";
+print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
+if(isset($_SESSION['role']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'admin and user')){
+	print			"<li><a href='surveyDataPage.php'>Survey Data</a></li>";
+}
+if(!isset($_SESSION['loggedin']))
+{
+	print	"<a href = 'login.php' id = 'logInAndOut'>Log In</a>";
+}
+else
+{
+	print	"<a href = 'logout.php' id = 'logInAndOut'>Log out</a>";
+}
+print	  	"</ul>";
 print	"</nav>";
-
+print  "</header>";
+print "<div class='content'>";
 	if(!empty($result))
 
 	{
@@ -95,7 +103,7 @@ print	"</nav>";
 		print $page->getBottomSection();
 
 	}
-
+print "</div>";
 	else
 
 	{
