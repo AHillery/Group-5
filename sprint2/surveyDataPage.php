@@ -44,11 +44,11 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'
 }
 if(!isset($_SESSION['loggedin']))
 {
-	print	"<a href = 'login.php' id = 'logInAndOut'>Log In</a>";
+	print	"<li class='right'><a href = 'login.php' id = 'logInAndOut'>Log In</a></li>";
 }
 else
 {
-	print	"<a href = 'logout.php' id = 'logInAndOut'>Log out</a>";
+	print	"<li class='right'><a href = 'logout.php' id = 'logInAndOut'>Log out</a></li>";
 }
 print	  	"</ul>";
 print	"</nav>";
