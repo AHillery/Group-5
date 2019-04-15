@@ -54,10 +54,8 @@ else{};
 	print	"<header class='header'>";
 	print		"<h1>Survey Submitted</h1>";
 	print	"</header>";
-  print "<div class='wrap'>";
   print	"<div class='content'>";
 	print	"<p class='text' id='notification'>Thank you for participating in our survey!!!</p>";
-  print "</div>";
   print "</div>";
 	}
 	else
