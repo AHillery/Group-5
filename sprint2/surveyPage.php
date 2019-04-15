@@ -21,7 +21,16 @@ print $page->getTopSection();
 
 
  
-print	"<header class='header'>";
+print "<header class='header'>";
+print	"<nav>";
+print		"<ul>";
+print			"<li><a href='homePage.php'>Home</a></li>";
+print			"<li><a href='surveyPage.php'>Survey</a></li>";
+print			"<li><a href='albumPage.php'>Album Search</a></li>";
+print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
+if(isset($_SESSION['role']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'admin and user')){
+	print			"<li><a href='surveyDataPage.php'>Survey Data</a></li>";
+}
 if(!isset($_SESSION['loggedin']))
 {
 	print	"<a href = 'login.php' id = 'logInAndOut'>Log In</a>";
@@ -30,20 +39,10 @@ else
 {
 	print	"<a href = 'logout.php' id = 'logInAndOut'>Log out</a>";
 }
-print		"<h1>Survey Page</h1>";
-print	"</header>";
-print	"<nav>";
-print		"<ul>";
-print			"<li><a href='homePage.php'>Home</a></li>";
-print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
-print			"<li><a href='albumPage.php'>Album Search</a></li>";
-if(isset($_SESSION['role']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'admin and user')){
-	print			"<li><a href='surveyDataPage.php'>Survey Data</a></li>";
-}
-print		"</ul>";
+print	  	"</ul>";
 print	"</nav>";
+print  "</header>";
 print	"<!-- this is the form conataining major, grade, pizza topping -->";
-print	"<div class='wrap'>";
 print "<div class='content'>";
 print		"<form action='actionPage.php' method='POST'>";
 print			"<fieldset class='text' id='survey'>";
@@ -92,6 +91,5 @@ print			"</fieldset>";
 print			"<br><input id='submit' type='submit' value='Submit'>";
 print		"</form>";
 print "</div>";
-print	"</div>";
 print $page->getBottomSection();
 
