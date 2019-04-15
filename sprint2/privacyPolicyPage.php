@@ -1,24 +1,24 @@
 <?php
 session_start();
 require_once("Template.php");
+
 $page = new Template("Privacy Policy Page");
 $page->addHeadElement("<link rel='stylesheet' href='style.css'>");
 $page->finalizeTopSection();
 $page->finalizeBottomSection();
+
 print $page->getTopSection();
  
 print "<header class='header'>";
 if(!isset($_SESSION['loggedin']))
 {
 	print	"<a href = 'login.php' id = 'logInAndOut'>Log In</a>";
-	print	  "<h1>Privacy Policy</h1>";
 }
 else
 {
 	print	"<a href = 'logout.php' id = 'logInAndOut'>Log out</a>";
-	print	  "<h1>Privacy Policy</h1>";
-	print "<p id = 'welcomeMessege'>Welcome ".$_SESSION['name']."</p>";
 }
+print	  "<h1>Privacy Policy</h1>";
 print  "</header>";
 print	"<nav>";
 print		"<ul>";
@@ -49,6 +49,7 @@ print			"<p>&nbsp;&nbsp;&nbsp;We will use personal information that you provide 
 			information will have a separate privacy statement that will tell you how that 
 			information is used.
 			</p>";
+
  
 print "</div>";
 print "<div class='text'>";
@@ -75,3 +76,4 @@ print "</div>";
 print "</div>";
 print	"</div>";	
 print $page->getBottomSection();
+
