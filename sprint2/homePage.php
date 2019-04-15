@@ -3,7 +3,7 @@ session_start();
 require_once("Template.php");
 
 $page = new Template("Home Page");
-$page->addHeadElement("<link rel='stylesheet' href='style.css'>");
+$page->addHeadElement("<link rel='stylesheet' href='styles.css'>");
 $page->finalizeTopSection();
 $page->finalizeBottomSection();
 

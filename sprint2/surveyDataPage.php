@@ -33,27 +33,28 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'
 	print $page->getTopSection();
 	
 print "<header class='header'>";
-print	"<nav>";
-print		"<ul>";
-print			"<li><a href='homePage.php'>Home</a></li>";
-print			"<li><a href='surveyPage.php'>Survey</a></li>";
-print			"<li><a href='albumPage.php'>Album Search</a></li>";
-print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
-if(isset($_SESSION['role']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'admin and user')){
-	print			"<li><a href='surveyDataPage.php'>Survey Data</a></li>";
-}
 if(!isset($_SESSION['loggedin']))
 {
-	print	"<li class='right'><a href = 'login.php' id = 'logInAndOut'>Log In</a></li>";
+	print	"<a href = 'login.php' id = 'logInAndOut'>Log In</a>";
+	print	  "<h1>Survey Data Page</h1>";
 }
 else
 {
-	print	"<li class='right'><a href = 'logout.php' id = 'logInAndOut'>Log out</a></li>";
+	print	"<a href = 'logout.php' id = 'logInAndOut'>Log out</a>";
+	print	  "<h1>Survey Data Page</h1>";
+	print "<p id = 'welcomeMessege'>Welcome ".$_SESSION['name']."</p>";
 }
-print	  	"</ul>";
-print	"</nav>";
 print  "</header>";
-print "<div class='content'>";
+
+print	"<nav>";
+print		"<ul>";
+print			"<li><a href='homePage.php'>Home</a></li>";
+print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
+print			"<li><a href='surveyPage.php'>Survey</a></li>";
+print			"<li><a href='albumPage.php'>Album Search</a></li>";
+print		"</ul>";
+print	"</nav>";
+
 	if(!empty($result))
 
 	{
@@ -103,7 +104,7 @@ print "<div class='content'>";
 		print $page->getBottomSection();
 
 	}
-print "</div>";
+
 	else
 
 	{

@@ -8,7 +8,7 @@ require_once("Template.php");
 
 $page = new Template("Survey Page");
 
-$page->addHeadElement("<link rel='stylesheet' href='style.css'>");
+$page->addHeadElement("<link rel='stylesheet' href='styles.css'>");
 
 $page->finalizeTopSection();
 
@@ -25,12 +25,14 @@ print	"<header class='header'>";
 if(!isset($_SESSION['loggedin']))
 {
 	print	"<a href = 'login.php' id = 'logInAndOut'>Log In</a>";
+	print	  "<h1>Survey Page</h1>";
 }
 else
 {
 	print	"<a href = 'logout.php' id = 'logInAndOut'>Log out</a>";
+	print	  "<h1>Survey Page</h1>";
+	print "<p id = 'welcomeMessege'>Welcome ".$_SESSION['name']."</p>";
 }
-print		"<h1>Survey Page</h1>";
 print	"</header>";
 print	"<nav>";
 print		"<ul>";
