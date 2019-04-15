@@ -8,7 +8,7 @@ require_once("Template.php");
 
 $page = new Template("Survey Page");
 
-$page->addHeadElement("<link rel='stylesheet' href='style.css'>");
+$page->addHeadElement("<link rel='stylesheet' href='styles.css'>");
 
 $page->finalizeTopSection();
 
