@@ -6,13 +6,15 @@ require_once("DB.class.php");
 
 $page = new Template("Action Page");
 
-$page->addHeadElement("<link rel='stylesheet' href='styles.css'>");
+$page->addHeadElement("<link rel='stylesheet' href='style.css'>");
 
 $page->finalizeTopSection();
 
 $page->finalizeBottomSection();
 
 print $page->getTopSection();
+
+
 
 if((isset($_POST['major']) && isset($_POST['grade']) && isset($_POST['pizzaTopping'])))
 
@@ -27,13 +29,19 @@ if (!$db->getConnStatus())
 }
 else{};
 
-
-
+    $majorString = "";
+	
+    
+	foreach($_POST['major'] as $checkbox){
+			$majorString .= $checkbox.", ";
+	}
+	
+	
 
 
 	$ip=$_SERVER['REMOTE_ADDR'];
 
-	$major = $db->dbEsc($_POST['major']);
+	$major = $db->dbEsc(substr($majorString,0,-2));
 
 	$grade = $db->dbEsc($_POST['grade']);
 
@@ -41,7 +49,7 @@ else{};
 
 	
 
-	if(($_POST['major'] != "" && $_POST['pizzaTopping'] != ""))
+	if(($major != "" && $_POST['pizzaTopping'] != ""))
 
 	{
 
@@ -52,11 +60,12 @@ else{};
 	$result = $db->dbCall($query);
 
 	print	"<header class='header'>";
-		
 	print		"<h1>Survey Submitted</h1>";
 	print	"</header>";
+  print "<div class='wrap'>";
   print	"<div class='content'>";
 	print	"<p class='text' id='notification'>Thank you for participating in our survey!!!</p>";
+  print "</div>";
   print "</div>";
 	}
 	else
