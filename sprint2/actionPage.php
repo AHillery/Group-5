@@ -6,7 +6,7 @@ require_once("DB.class.php");
 
 $page = new Template("Action Page");
 
-$page->addHeadElement("<link rel='stylesheet' href='style.css'>");
+$page->addHeadElement("<link rel='stylesheet' href='styles.css'>");
 
 $page->finalizeTopSection();
 
@@ -59,9 +59,15 @@ else{};
 
 	$result = $db->dbCall($query);
 
-	print	"<header class='header'>";
-	print		"<h1>Survey Submitted</h1>";
-	print	"</header>";
+print "<header class='header'>";
+print	"<nav>";
+print		"<ul>";
+print			"<li><a href='homePage.php'>Home</a></li>";
+print			"<h1 style = 'color:white; text-align:center;'>Survey Submitted</h1>";
+
+print	  	"</ul>";
+print	"</nav>";
+print  "</header>";
   print "<div class='wrap'>";
   print	"<div class='content'>";
 	print	"<p class='text' id='notification'>Thank you for participating in our survey!!!</p>";

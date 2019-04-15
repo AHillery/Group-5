@@ -5,11 +5,11 @@ require_once("Template.php");
 require_once("DB.class.php");
 
 $page = new Template("Error Page");
-//$page->addHeadElement("<link rel='stylesheet' href='style.css'>");
+$page->addHeadElement("<link rel='stylesheet' href='styles.css'>");
 $page->finalizeTopSection();
 $page->finalizeBottomSection();
 
-if(isset($_POST['username']) && isset($_POST['username'])){
+if(isset($_POST['username']) && isset($_POST['password'])){
 	$db = new DB();
 	if (!$db->getConnStatus()) 
 	{
@@ -39,24 +39,16 @@ if(isset($_POST['username']) && isset($_POST['username'])){
 		
 		$_SESSION['loggedin'] = true;
 		$_SESSION['name'] = filter_var($_POST['username'], FILTER_SANITIZE_EMAIL);
-		
+		$_SESSION['error'] = false;
 		header("Location: homePage.php");
 	}
 	else{
-		print $page->getTopSection();
-		print "<header class='header'>";
-		print	  "<h1>ERROR LOGGING IN</h1>";
-		print  "</header>";
-		print "<p>Invalid username or password</p>";
-		print $page->getBottomSection();
+		$_SESSION['error'] = true;
+		header("Location: login.php");
 	}
 }
 else{
-	print $page->getTopSection();
-		print "<header class='header'>";
-		print	  "<h1>ERROR LOGGING IN</h1>";
-		print  "</header>";
-		print "<p>Invalid username or password</p>";
-		print $page->getBottomSection();
+	$_SESSION['error'] = true;
+		header("Location: login.php");
 }
 ?>

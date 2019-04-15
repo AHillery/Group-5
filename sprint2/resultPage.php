@@ -39,30 +39,18 @@ print "<header class='header'>";
 print	"<nav>";
 print		"<ul>";
 print			"<li><a href='homePage.php'>Home</a></li>";
-print			"<li><a href='surveyPage.php'>Survey</a></li>";
-print			"<li><a href='albumPage.php'>Album Search</a></li>";
-print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
-if(isset($_SESSION['role']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'admin and user')){
-	print			"<li><a href='surveyDataPage.php'>Survey Data</a></li>";
-}
-if(!isset($_SESSION['loggedin']))
-{
-	print	"<a href = 'login.php' id = 'logInAndOut'>Log In</a>";
-}
-else
-{
-	print	"<a href = 'logout.php' id = 'logInAndOut'>Log out</a>";
-}
+print			"<h1 style = 'color:white; text-align:center;'>Album Result Page</h1>";
+
 print	  	"</ul>";
 print	"</nav>";
 print  "</header>";
 
-
+print "<div class='context'>";
 	if(!empty($result))
 
 	{
 
-		print '<table id="dataWithNav">';
+		print '<table id="dataWithoutNav">';
 
 		print'<tr>';
 
@@ -103,7 +91,7 @@ print  "</header>";
 			}
 
 		print '</table>';
-
+		print '</div>';
 		print $page->getBottomSection();
 
 	}
