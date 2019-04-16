@@ -37,9 +37,9 @@ print "<header class='header'>";
 print	"<nav>";
 print		"<ul>";
 print			"<li><a href='homePage.php'>Home</a></li>";
-print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
-print			"<li><a href='albumPage.php'>Album Search</a></li>";
 print			"<li><a href='surveyPage.php'>Survey</a></li>";
+print			"<li><a href='albumPage.php'>Album Search</a></li>";
+print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
 
 if(!isset($_SESSION['loggedin']))
 {
