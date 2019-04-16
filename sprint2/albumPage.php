@@ -41,7 +41,7 @@ print		"<form action='resultPage.php' method='POST'>";
 print 			"<fieldset class'fieldset' id='albumFieldset>";
 print				"<label class='loginLabel' for='searchBox'>Enter ablum title or album artist:&nbsp;</label>";
 print 				"<input class='loginInput' id='searchBox' type='text' name='lookup'><br>";
-print				"<input id='albumSubmit' type='submit' value='Searcht'>";
+print				"<input id='albumSubmit' type='submit' value='Search'>";
 print			"</fieldset>";
 print		"</form>";
 print 	"</div>";
