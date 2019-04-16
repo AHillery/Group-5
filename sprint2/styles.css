@@ -1,4 +1,7 @@
-
+*{
+  font-family: sans-serif;
+  letter-spacing: 1.2px;
+}
 ul {
   list-style-type: none;
   overflow: hidden;
@@ -17,6 +20,7 @@ ul li {float: left;}
 
 ul li a {
   display: block;
+  background-color: black;
   color: white;
   text-align: center;
   padding: 14px 16px;
@@ -38,22 +42,150 @@ ul li.right {float: right;
 
 .content {
   margin: 2em;
-  margin-top: 3.5em;
   padding: 2em;
   height: 1500px;
 }
 
 .text {
   padding: 1em;
-  border: solid black 1px;
+
+}
+
+.title{
+  border-bottom: solid black 2px;
 }
 
 .dataWithoutNav{
   border: solid black 1px;
 }
 
+#loginFieldset, .loginLabel ,#loginSubmit {
+  padding-left: 3.5%;
+
+}
+
+#loginFieldset{
+padding-top: 4%;
+padding-bottom: 2%;
+height: 255px;
+margin-left: 32%;
+width: 22%;
+
+}
+
+.loginLabel {
+background-color: inherit;
+padding-left: 1%;
+text-align: center;
+width: 80%;
+font-size: 12px;
+font-weight: bolder;
+
+
+}
+
+.loginInput {
+background-color: white;
+margin-top: 3px;
+padding: 3%;
+border: 0px;
+border: solid black .5px;
+width:80%;
+font-size: 15px;
+
+}
+
+#loginSubmit{
+  margin: 15% 4% 0 2%;
+  padding: 4% 10% 4% 9%;
+ background-color: black;
+ color: white;
+ border: solid black 1px;
+ width:84%;
+ text-align: center;
+ font-size: 14px;
+ border-radius:  solid black 3px;
+}
+
+#albumFieldset{
+  padding-top: 1%;
+  padding-bottom: 2%;
+  margin-left: 6%;
+  margin-right: 4%;
+  width: 80%;
+  border: 0px;
+  border-bottom: 1px solid black;
+}
+
+.albumLabel {
+  margin-left: 4%;
+  text-align: center;
+  width: 80%;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.albumInput {
+  margin-left: 2%;
+  background-color: white;
+  padding: .9%;
+  border: 0px;
+  border: solid black .5px;
+  width:30%;
+  font-size: 15px;
+}
+
+#albumSearch{
+ padding: 1%;
+ margin-left: 3%;
+ background-color: black;
+ color: white;
+ width:15%;
+ text-align: center;
+ font-size: 15px;
+ border: 0px;
+}
+
+.survey {
+  padding-left: 2%;
+}
+
+#surveyFeildset{
+  margin-left: 15%;
+  padding: 1%;
+  width: 60%;
+  border: 0px;
+
+}
+
+#surveySubmit{
+ padding: 2%;
+ margin-left: 30%;
+ margin-top: 8%;
+ background-color: black;
+ color: white;
+ width:45%;
+ text-align: center;
+ font-size: 15px;
+ border: 0px;
+}
+
+#policyFieldset {
+  padding: 2%;
+  width: 70%;
+  font-size: 15px;
+  border-bottom: solid black 1px;
+
+}
+
+#policyFieldset p{
+
+  letter-spacing: 1.2px;
+
+}
+
 tr {
-  color: blue;
+color: blue;
 }
 
 th {
@@ -77,5 +209,5 @@ text-align: center;
 #dataWithoutNav{
 	padding-top: 5%;
 	margin-left: 5%;
-	width:75%; 
+	width:75%;
 }
