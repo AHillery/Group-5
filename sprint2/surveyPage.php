@@ -26,8 +26,9 @@ print "<header class='header'>";
 print	"<nav>";
 print		"<ul>";
 print			"<li><a href='homePage.php'>Home</a></li>";
-print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
+print			"<li><a href='surveyPage.php'>Survey</a></li>";
 print			"<li><a href='albumPage.php'>Album Search</a></li>";
+print			"<li><a href='privacyPolicyPage.php'>Privacy Policy</a></li>";
 
 if(isset($_SESSION['role']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'admin and user')){
 	print			"<li><a href='surveyDataPage.php'>Survey Data</a></li>";
