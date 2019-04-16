@@ -68,11 +68,10 @@ print			"<h1 style = 'color:white; text-align:center;'>Survey Submitted</h1>";
 print	  	"</ul>";
 print	"</nav>";
 print  "</header>";
-  print "<div class='wrap'>";
   print	"<div class='content'>";
-	print	"<p class='text' id='notification'>Thank you for participating in our survey!!!</p>";
-  print "</div>";
-  print "</div>";
+	print	"<p id='notification'>Thank you for participating in our survey!!!</p>";
+print "</div>";
+
 	}
 	else
 	{
