@@ -45,7 +45,6 @@ print	  	"</ul>";
 print	"</nav>";
 print  "</header>";
 
-print "<div class='content'>";
 	if(!empty($result))
 
 	{
@@ -91,7 +90,6 @@ print "<div class='content'>";
 			}
 
 		print '</table>';
-		print '</div>';
 		print $page->getBottomSection();
 
 	}
