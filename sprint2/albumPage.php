@@ -35,18 +35,14 @@ else
 print		"</ul>";
 print	"</nav>";
 print  "</header>";
-print	"<div class='wrap'>";
 
-
- 
 print "<div class='content' id='album'>";
 print		"<form action='resultPage.php' method='POST'>";
-print 			"<fieldset class'text'>";
-print				"<label for='searchBox'>Enter ablum title or album artist:&nbsp;</label>";
-print 			"<input id='searchBox' type='text' name='lookup'><br>";
+print 			"<fieldset class'fieldset' id='albumFieldset>";
+print				"<label class='loginLabel' for='searchBox'>Enter ablum title or album artist:&nbsp;</label>";
+print 				"<input class='loginInput' id='searchBox' type='text' name='lookup'><br>";
+print				"<input id='albumSubmit' type='submit' value='Searcht'>";
 print			"</fieldset>";
-print			"<input id='submit' type='submit' value='Submit'>";
 print		"</form>";
-print 	"</div>";
 print 	"</div>";
 print $page->getBottomSection();
