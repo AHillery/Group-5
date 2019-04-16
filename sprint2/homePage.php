@@ -37,12 +37,10 @@ print		"</ul>";
 print	"</nav>";
 print  "</header>";
 print "<!-- this paragraph gives info on what the page is for -->";
-print   "<div class = 'smallTxtBox'>";
 print	"<div class='content'>";
 
-print		"<p class='text'>&nbsp;&nbsp;&nbsp;This is the home page for Sprint 2 assignment.</p>";
+print		"<p>&nbsp;&nbsp;&nbsp;This is the home page for Sprint 2 assignment.</p>";
 
-print	"</div>";
 print	"</div>";
 
 print $page->getBottomSection();
