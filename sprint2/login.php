@@ -17,12 +17,12 @@ print "</nav>";
 print	"</header>";
 print "<div class='content'>";
 print  "<form name='myForm' action='errorPage.php' method='POST'>";
-print  "<fieldset>";
-print  "<label for='username'>Username: </label>";
-print  "<input type='text' name='username' value=''><br><br>";
-print  "<label for='Password'>Password: </label>";
-print  "<input type='password' name='password' value=''><br><br>";
-print  "<input type='submit' id='submit' name='submit' value='Log In'>";
+print  "<fieldset class='fieldset' id='loginFieldset'>";
+print  "<label class='loginLabel' for='username'>Username: </label>";
+print  "<input class='loginInput' type='text' name='username' value=''><br><br>";
+print  "<label class='loginLabel' for='Password'>Password: </label>";
+print  "<input class='loginInput' type='password' name='password' value=''><br><br>";
+print  "<input type='submit' id='loginSubmit' name='submit' value='Log In'>";
 print  "</fieldset>";
 print  "</form>";
 if(isset($_SESSION['error']) && $_SESSION['error'])
