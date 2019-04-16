@@ -25,6 +25,7 @@ print  "<input class='loginInput' type='password' name='password' value=''><br><
 print  "<input type='submit' id='loginSubmit' name='submit' value='Log In'>";
 print  "</fieldset>";
 print  "</form>";
+print  "</div>";
 if(isset($_SESSION['error']) && $_SESSION['error'])
 {
 		print "<h3>ERROR LOGGING IN: invalid username or password</h3>";
