@@ -45,7 +45,7 @@ print	  	"</ul>";
 print	"</nav>";
 print  "</header>";
 
-print "<div class='context'>";
+print "<div class='content'>";
 	if(!empty($result))
 
 	{
