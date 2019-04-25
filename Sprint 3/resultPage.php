@@ -65,6 +65,8 @@ print "<div class='context'>";
 		print'<th>Album Length</th> ';
 
 		print'<th>Status</th>';
+		
+		print'<th>Purchase</th>';
 
 		print'</tr>';
 
@@ -85,6 +87,8 @@ print "<div class='context'>";
 				print'<td>'.$album["albumlength"].'</td> ';
 
 				print'<td>'.$album["status"].'</td>';
+				
+				print'<td><a href="'.$album["url"].'">Amazon Music</a></td>';
 
 				print'</tr>';
 
