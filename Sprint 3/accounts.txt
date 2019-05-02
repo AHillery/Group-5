@@ -1,5 +1,9 @@
    
 
-text@example.com boo	
+username: text@example.com 
+password: boo	
+roles: admin, user 
 
-testuser@example.com logmein
+username:testuser@example.com 
+password: logmein
+roles: user

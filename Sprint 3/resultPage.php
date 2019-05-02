@@ -16,41 +16,67 @@ if(isset($_POST['lookup']) && $_POST['lookup']!="")
 
 {
 
-	$db = new DB();
+	$data = array("lookup" => $_POST['lookup']);
+	$dataJson = json_encode($data);
 
-	if (!$db->getConnStatus()) 
+	$postString = "data=" . urlencode($dataJson);
 
-	{
+	$contentLength = strlen($postString);
 
-	  print "An error has occurred with connection\n";
+	$header = array(
+	  'Content-Type: application/x-www-form-urlencoded',
+	  'Content-Length: ' . $contentLength
+	);
 
-	  exit;
+	$url = "http://cnmtsrv2.uwsp.edu/~ahill985/albumWS.php";
 
+
+	$ch = curl_init();
+
+	curl_setopt($ch,
+		CURLOPT_CUSTOMREQUEST, "POST");
+	curl_setopt($ch,
+		CURLOPT_POSTFIELDS, $postString);
+	curl_setopt($ch,
+		CURLOPT_HTTPHEADER, $header);
+	curl_setopt($ch,
+		CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch,
+		CURLOPT_URL, $url);
+
+	$return = curl_exec($ch);
+
+
+	curl_close($ch);
+	
+	$resultDecoded = json_decode($return);
+	
+	$result = array();
+	$index = 0;
+	
+	foreach($resultDecoded as $entry){
+		$result[$index] = (array)$entry;
+		$index += 1;
 	}
 
-	$search = $db->dbEsc($_POST['lookup']);
-
-	$query = 'SELECT * FROM album WHERE albumtitle = "'.$search.'" OR albumartist = "'.$search.'"';
-
-	$result = $db->dbCall($query);
-
 	print $page->getTopSection();
-print "<header class='header'>";
-print	"<nav>";
-print		"<ul>";
-print			"<li><a href='homePage.php'>Home</a></li>";
-print			"<h1 style = 'color:white; text-align:center;'>Album Result Page</h1>";
+	print "<header class='header'>";
+	print	"<nav>";
+	print		"<ul>";
+	print			"<li><a href='homePage.php'>Home</a></li>";
+	print			"<h1 style = 'color:white; text-align:center;'>Album Result Page</h1>";
 
-print	  	"</ul>";
-print	"</nav>";
-print  "</header>";
+	print	  	"</ul>";
+	print	"</nav>";
+	print  "</header>";
 
-print "<div class='context'>";
+	
+	
 	if(!empty($result))
 
 	{
 
-		print '<table id="dataWithoutNav">';
+		print '<table id="dataWithoutNav" style = "padding-top:7%;">';
 
 		print'<tr>';
 
@@ -66,7 +92,7 @@ print "<div class='context'>";
 
 		print'<th>Status</th>';
 		
-		print'<th>Purchase</th>';
+		print'<th>URL</th>';
 
 		print'</tr>';
 
@@ -88,14 +114,15 @@ print "<div class='context'>";
 
 				print'<td>'.$album["status"].'</td>';
 				
-				print'<td><a href="'.$album["url"].'">Amazon Music</a></td>';
+				print'<td><a href="'.$album["url"].'">Amazon Music Link</a></td>';
 
 				print'</tr>';
 
 			}
 
 		print '</table>';
-		print '</div>';
+		
+		
 		print $page->getBottomSection();
 
 	}
@@ -106,7 +133,7 @@ print "<div class='context'>";
 
 		$sanatizedLookup = filter_var($_POST['lookup'], FILTER_SANITIZE_STRING);
 
-		print '<p class="text">No match was found using"'.$sanatizedLookup. '"</p>';
+		print '<p class="text" style = "margin-top:7%;">No match was found using "'.$sanatizedLookup. '"</p>';
 
 	}
 
@@ -114,10 +141,6 @@ print "<div class='context'>";
 
 else{
 
-	print $page->getTopSection();
-
-	print '<h1>ERROR: NOTHING WAS ENTERED</h1>';
-
-	print $page->getBottomSection();
+	header("Location: albumPage.php");
 
 }
